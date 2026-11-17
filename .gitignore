@@ -1,0 +1,10 @@
+delta_lake/
+__pycache__/
+*.pyc
+.env
+databricks/.DS_Store
+.DS_Store
+
+# Locally generated FAISS artifacts
+faiss_index/*.index
+faiss_index/*.pkl

@@ -1,0 +1,22 @@
+# Databricks Apps configuration
+# Deploy with: databricks apps deploy nyaya-sahayak --source-code-path ./databricks/app
+
+command:
+  - streamlit
+  - run
+  - app.py
+  - --server.port=8080
+  - --server.headless=true
+
+env:
+  - name: DATABRICKS_TOKEN
+    valueFrom:
+      secretRef:
+        scope: nyaya
+        key: databricks_token
+
+  - name: SARVAM_API_KEY
+    valueFrom:
+      secretRef:
+        scope: nyaya
+        key: sarvam_api_key
